@@ -1,0 +1,16 @@
+name: WWW-Blog-Metadata-Icon
+version: 0.01
+abstract: Extract icon URI (FOAF photo, favicon) from weblog
+author: Benjamin Trott <ben+cpan@stupidfool.org>
+license: perl
+distribution_type: module
+requires:
+  WWW::Blog::Metadata: 0
+  XML::FOAF: 0
+  URI: 0
+  LWP::UserAgent: 0
+no_index:
+  directory:
+    - t
+    - inc
+generated_by: Module::Install version 0.36
