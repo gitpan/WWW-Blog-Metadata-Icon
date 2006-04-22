@@ -1,9 +1,9 @@
-# $Id: Icon.pm 1810 2005-03-16 22:48:49Z btrott $
+# $Id: Icon.pm 1933 2006-04-22 04:53:48Z btrott $
 
 package WWW::Blog::Metadata::Icon;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use WWW::Blog::Metadata;
 use XML::FOAF;
@@ -16,10 +16,10 @@ sub on_got_html {
     my $class = shift;
     my($meta, $html, $base_uri) = @_;
     my $ua = LWP::UserAgent->new;
-    my $req = HTTP::Request->new(HEAD => $base_uri . 'favicon.uri');
+    my $req = HTTP::Request->new(HEAD => $base_uri . 'favicon.ico');
     my $res = $ua->request($req);
     if ($res->is_success) {
-        $meta->favicon_uri($base_uri . 'favicon.uri');
+        $meta->favicon_uri($base_uri . 'favicon.ico');
     }
     my $foaf_uri = XML::FOAF->find_foaf_in_html($html, $base_uri)
         or return;

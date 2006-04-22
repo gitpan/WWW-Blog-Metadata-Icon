@@ -1,4 +1,4 @@
-# $Id: 01-extract.t 1816 2005-03-16 22:56:37Z btrott $
+# $Id: 01-extract.t 1933 2006-04-22 04:53:48Z btrott $
 
 use strict;
 use Test::More tests => 6;
@@ -8,12 +8,12 @@ my $meta;
 
 $meta = WWW::Blog::Metadata->extract_from_uri('http://btrott.typepad.com/')
     or die WWW::Blog::Metadata->errstr;
-is($meta->foaf_icon_uri, 'http://btrott.typepad.com/ben-vienna.jpg');
-is($meta->icon_uri, 'http://btrott.typepad.com/ben-vienna.jpg');
-ok(!$meta->favicon_uri);
+is($meta->foaf_icon_uri, 'http://btrott.typepad.com/benffshirt.jpg');
+is($meta->icon_uri, 'http://btrott.typepad.com/benffshirt.jpg');
+is($meta->favicon_uri, 'http://btrott.typepad.com/favicon.ico');
 
-$meta = WWW::Blog::Metadata->extract_from_uri('http://overstated.net/')
+$meta = WWW::Blog::Metadata->extract_from_uri('http://www.typepad.com/')
     or die WWW::Blog::Metadata->errstr;
-is($meta->favicon_uri, 'http://overstated.net/favicon.ico');
-is($meta->icon_uri, 'http://overstated.net/favicon.ico');
+is($meta->favicon_uri, 'http://www.typepad.com/favicon.ico');
+is($meta->icon_uri, 'http://www.typepad.com/favicon.ico');
 ok(!$meta->foaf_icon_uri);

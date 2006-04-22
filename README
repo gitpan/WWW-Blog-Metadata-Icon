@@ -1,4 +1,4 @@
-$Id: README 1810 2005-03-16 22:48:49Z btrott $
+$Id: README 1933 2006-04-22 04:53:48Z btrott $
 
 This is WWW::Blog::Metadata::Icon, a class to extract icon/photo URIs
 from weblogs.
